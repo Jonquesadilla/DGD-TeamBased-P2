@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8931502070918418691}
   - component: {fileID: 4084443622748258463}
   - component: {fileID: 4907517151557344080}
-  - component: {fileID: 8678240602736529816}
+  - component: {fileID: 3827517152002361346}
   m_Layer: 0
   m_Name: Planks Space
   m_TagString: Plank
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8678240602736529816
+--- !u!114 &3827517152002361346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 169376850340040887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6a3d2bdbd2083947b49dd43ac136835, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b224b2a0c74ae04fa92a89a1210e43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4084443622748258463}

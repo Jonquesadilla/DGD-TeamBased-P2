@@ -158,7 +158,7 @@ MonoBehaviour:
   - {fileID: 169376850340040887, guid: 9c94765da5e22de48942a62377d9f050, type: 3}
   - {fileID: 169376850340040887, guid: f0a07f97eb0d20b44a5e1bea3cce8e58, type: 3}
   - {fileID: 169376850340040887, guid: 915a237362c66ea439be3f1ce2c83491, type: 3}
-  other: {fileID: 169376850340040887, guid: 6e5c607706ad4db4683e739413383504, type: 3}
+  script: {fileID: 0}
 --- !u!4 &384560330
 Transform:
   m_ObjectHideFlags: 0
@@ -296,6 +296,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -181153192820711761, guid: 6e5c607706ad4db4683e739413383504, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1686457551}
     - target: {fileID: 169376850340040887, guid: 6e5c607706ad4db4683e739413383504, type: 3}
       propertyPath: m_Name
       value: Planks W
@@ -345,6 +349,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e5c607706ad4db4683e739413383504, type: 3}
+--- !u!212 &1686457551 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4084443622748258463, guid: 6e5c607706ad4db4683e739413383504, type: 3}
+  m_PrefabInstance: {fileID: 1172001599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1818408332
 PrefabInstance:
   m_ObjectHideFlags: 0

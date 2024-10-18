@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     //Work #3
     public GameObject[] Planks;
 
-    public GameObject other;
+    // public GameObject other;
+    public Destroy_Plank script;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W)) 
             {
                 Debug.Log("Punch");
+                Invoke("DestroyObject", 0);
+
               //  Destroy(Planks);
             }
         }
