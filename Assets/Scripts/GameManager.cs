@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     //Work #3
     public GameObject[] Planks;
+
+    public GameObject[] PlankPrefabs = new GameObject[5];
 
     // public GameObject other;
     public Destroy_Plank script;
@@ -31,6 +34,15 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Plank Number" + i + " is named " + Planks[i].name);
         }
+
+        Instantiate(PlankPrefabs[UnityEngine.Random.Range(0, PlankPrefabs.Length)]);
+
+        // an array of the prefabs
+        // that array will be public and set in the inspector (ie we want to drag onto this script the prefabs in position in the array
+        // when the game starts (ie on Start()), we want to pick randomly out of that list a prefab to draw
+        // then, that prefab gets instantiated in the location that we want it to be
+        // right now, you are searching in the scene tree for existing prefabs (ie find game objects with tag) - this implies that the object already exist
+        // instead, you want to use the Instatiate Method at START, with a random pick from the list
     }
 
     // Update is called once per frame
@@ -74,5 +86,9 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Punch");
             }
         }
+    }
+    public void SpawnNewPlank()
+    {
+
     }
 }
