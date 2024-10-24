@@ -5,6 +5,7 @@ using UnityEngine;
 public class Destroy_Plank : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
+    public Sprite brokenPlank;
     // Start is called before the first frame update
     public void DestroyObject ()
     {
@@ -17,7 +18,7 @@ public class Destroy_Plank : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             //  Destroy(gameObject);
-            spriteRenderer.color = Color.red;
+            spriteRenderer.sprite = brokenPlank;
         }
     }
 }

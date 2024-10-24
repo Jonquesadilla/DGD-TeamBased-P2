@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] PlankPrefabs = new GameObject[5];
 
+    public float Timer = 3;
+    public TextMeshProUGUI Timetext;
     // public GameObject other;
     public Destroy_Plank script;
     // Start is called before the first frame update
@@ -35,7 +38,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Plank Number" + i + " is named " + Planks[i].name);
         }
 
-        Instantiate(PlankPrefabs[UnityEngine.Random.Range(0, PlankPrefabs.Length)]);
+      //  Instantiate(PlankPrefabs[UnityEngine.Random.Range(0, PlankPrefabs.Length)]);  The code to randomly spawn the different planks
 
         // an array of the prefabs
         // that array will be public and set in the inspector (ie we want to drag onto this script the prefabs in position in the array
@@ -86,6 +89,8 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Punch");
             }
         }
+        Timer -= Time.deltaTime;
+        Timetext.text = "Time: " + Mathf.Round(Timer);
     }
     public void SpawnNewPlank()
     {
