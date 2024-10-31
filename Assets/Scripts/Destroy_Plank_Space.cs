@@ -17,7 +17,8 @@ public class Destroy_Plank_Space : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            spriteRenderer.sprite = brokenPlank; 
+            spriteRenderer.sprite = brokenPlank;
+            Destroy(gameObject);
         }
     }
 }

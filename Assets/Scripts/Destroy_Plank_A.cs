@@ -18,6 +18,8 @@ public class Destroy_Plank_A : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             spriteRenderer.sprite = brokenPlank;
+            // something that will delete the sprites from the current list?
+            Destroy(gameObject);
         }
     }
 }

@@ -17,8 +17,8 @@ public class Destroy_Plank : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            //  Destroy(gameObject);
             spriteRenderer.sprite = brokenPlank;
+            Destroy(gameObject);
         }
     }
 }
