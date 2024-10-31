@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public float Timer = 3;
     public TextMeshProUGUI Timetext;
+    public TextMeshProUGUI Healthtext;
+    public float Health = 100;
     // public GameObject other;
     public Destroy_Plank script;
     // Start is called before the first frame update
@@ -38,7 +40,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("Plank Number" + i + " is named " + Planks[i].name);
         }
 
-      //  Instantiate(PlankPrefabs[UnityEngine.Random.Range(0, PlankPrefabs.Length)]);  The code to randomly spawn the different planks
+        for (int i = 0; i < 5; i++)
+        {
+            Instantiate(PlankPrefabs[UnityEngine.Random.Range(0, PlankPrefabs.Length)], new Vector3(0, 0 + i, 0), Quaternion.identity);
+        }
+        //Instantiate(PlankPrefabs[UnityEngine.Random.Range(0, PlankPrefabs.Length)]);
+        //Instantiate(PlankPrefabs[UnityEngine.Random.Range(0, PlankPrefabs.Length)]);  //The code to randomly spawn the different planks
 
         // an array of the prefabs
         // that array will be public and set in the inspector (ie we want to drag onto this script the prefabs in position in the array
@@ -91,6 +98,7 @@ public class GameManager : MonoBehaviour
         }
         Timer -= Time.deltaTime;
         Timetext.text = "Time: " + Mathf.Round(Timer);
+        Healthtext.text = "Health: " + Mathf.Round(Health);
     }
     public void SpawnNewPlank()
     {
