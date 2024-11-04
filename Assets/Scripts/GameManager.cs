@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] PlankPrefabs = new GameObject[5];
 
+    
+
     public float Timer = 3;
 
     public TextMeshProUGUI Timetext;
@@ -23,7 +25,12 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            Instantiate(PlankPrefabs[Random.Range(0, PlankPrefabs.Length)], new Vector3(0, 0 + i, 0), Quaternion.identity);
+            PlanksOnScreen[i] = PlankPrefabs[Random.Range(0, PlankPrefabs.Length)];
+            Instantiate(PlanksOnScreen[i], new Vector3(0, 4 - i, 0), Quaternion.identity);
+            if (i == 5)
+            {
+               // PlanksOnScreen[i] = null;
+            }
         }
 
         // an array of the prefabs
@@ -46,13 +53,21 @@ public class GameManager : MonoBehaviour
             Health -= 1;
             
         }
-
+      
         // populate a list of the current planks on screen!
         // i'll update the planks on screen array based on what planks i can find on screen!
 
         PlanksOnScreen = GameObject.FindGameObjectsWithTag("Plank");
+        for(int i = 0; i < PlanksOnScreen.Length; i++) 
+        {
+         //Destroy_Plank_Space destroy_Plank_Space = PlanksOnScreen.GetComponent<Destroy_Plank_Space>().active = true; // Figuring out to call the boolean active on the planks to be true
+          GetComponent<Destroy_Plank>().active = true;
+          GetComponent<Destroy_Plank_S>().active = true;
+          GetComponent<Destroy_Plank_D>().active = true;
+          GetComponent<Destroy_Plank_A>().active = true;
+        }
+        //Debug.Log(PlanksOnScreen.Length);
 
-        Debug.Log(PlanksOnScreen.Length);
 
         if (PlanksOnScreen.Length == 0)
         {

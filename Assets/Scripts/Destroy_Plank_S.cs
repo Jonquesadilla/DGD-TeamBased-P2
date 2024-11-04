@@ -6,6 +6,7 @@ public class Destroy_Plank_S : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Sprite brokenPlank;
+    public bool active = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class Destroy_Plank_S : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && active)
         {
             spriteRenderer.sprite = brokenPlank;
             Destroy(gameObject);

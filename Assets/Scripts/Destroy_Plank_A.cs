@@ -6,6 +6,7 @@ public class Destroy_Plank_A : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Sprite brokenPlank;
+    public bool active = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class Destroy_Plank_A : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && active)
         {
             spriteRenderer.sprite = brokenPlank;
             // something that will delete the sprites from the current list?
