@@ -7,7 +7,7 @@ public class Destroy_Plank : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite brokenPlank;
 
-    public bool active = false;
+    public  bool active = false;
     // Start is called before the first frame update
     public void DestroyObject ()
     {

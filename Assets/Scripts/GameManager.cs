@@ -10,15 +10,17 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] PlankPrefabs = new GameObject[5];
 
-    
+    public GameObject[] Planks;
 
     public float Timer = 3;
 
     public TextMeshProUGUI Timetext;
     public TextMeshProUGUI Healthtext;
 
+
     public float Health = 3;
 
+    public 
 
     // Start is called before the first frame update
     void Start()
@@ -60,11 +62,30 @@ public class GameManager : MonoBehaviour
         PlanksOnScreen = GameObject.FindGameObjectsWithTag("Plank");
         for(int i = 0; i < PlanksOnScreen.Length; i++) 
         {
-         //Destroy_Plank_Space destroy_Plank_Space = PlanksOnScreen.GetComponent<Destroy_Plank_Space>().active = true; // Figuring out to call the boolean active on the planks to be true
-          GetComponent<Destroy_Plank>().active = true;
-          GetComponent<Destroy_Plank_S>().active = true;
-          GetComponent<Destroy_Plank_D>().active = true;
-          GetComponent<Destroy_Plank_A>().active = true;
+            //Destroy_Plank_Space destroy_Plank_Space = PlanksOnScreen.GetComponent<Destroy_Plank_Space>().active = true; // Figuring out to call the boolean active on the planks to be true
+            if (i == 0) 
+            {
+                if (PlanksOnScreen[i].GetComponent<Destroy_Plank>())
+                {
+                    PlanksOnScreen[i].GetComponent<Destroy_Plank>().active = true;
+                }
+                if (PlanksOnScreen[i].GetComponent<Destroy_Plank_S>())
+                {
+                    PlanksOnScreen[i].GetComponent<Destroy_Plank_S>().active = true;
+                }
+                if (PlanksOnScreen[i].GetComponent<Destroy_Plank_D>())
+                {
+                    PlanksOnScreen[i].GetComponent<Destroy_Plank_D>().active = true;
+                }
+                if (PlanksOnScreen[i].GetComponent<Destroy_Plank_A>())
+                {
+                    PlanksOnScreen[i].GetComponent<Destroy_Plank_A>().active = true;
+                }
+                if (PlanksOnScreen[i].GetComponent<Destroy_Plank_Space>())
+                {
+                    PlanksOnScreen[i].GetComponent<Destroy_Plank_Space>().active = true;
+                }
+            }
         }
         //Debug.Log(PlanksOnScreen.Length);
 
@@ -74,7 +95,7 @@ public class GameManager : MonoBehaviour
             Timer = 3;
             for (int i = 0;i < 5;i++)
             {
-                Instantiate(PlankPrefabs[Random.Range(0, PlankPrefabs.Length)], new Vector3(0, 0 + i, 0), Quaternion.identity);
+                Instantiate(PlankPrefabs[Random.Range(0, PlankPrefabs.Length)], new Vector3(0, 4 - i, 0), Quaternion.identity);
             }
         }
     }
