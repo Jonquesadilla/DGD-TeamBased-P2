@@ -11,18 +11,20 @@ public class PlayerManager : MonoBehaviour
     public TMP_Text ShownTime;
     public float Temp = 5;
     public float Timer = 5;
+    public bool Ready = false;
 
     public String Recent;
 
     public SpriteRenderer Explosion;
+    Color ColorEdit;
     
     public 
     
     // Start is called before the first frame update
     void Start()
     {
-
-        Explosion.GetComponent<Renderer>().material.color.a = 1.0f;
+        
+        
 
     }
 
@@ -30,10 +32,20 @@ public class PlayerManager : MonoBehaviour
     void FixedUpdate()
     {
 
+        if (Input.GetKey("1"))
+        {
+            
+            ColorEdit.a = 0.0f;
+            
+            Timer = 5.0f;
+            Ready = true;
+            
+        }
+
         if (Input.GetKey("space")) Recent = "S";
         if (Input.GetKey("backspace")) Recent = "F";
         
-        if (Timer >= 0.00)
+        if (Timer >= 0.00 && Ready == true)
         {
             
             Timer -= Time.deltaTime;
@@ -41,19 +53,30 @@ public class PlayerManager : MonoBehaviour
             ShownTime.text = "Time: " + Temp;
             
         }
-        else
+        if (Timer <= 0.00)
         {
             
-            if (Recent == "S") Player.SetBool("Success", true);
-            if (Recent == "F")
+            if (Recent == "S") Player.SetInteger("Success", 2);
+            else
             {
                 
+                ColorEdit = Explosion.GetComponent<SpriteRenderer>().color;
+                ColorEdit.a = 1.0f;
+        
+                Explosion.GetComponent<SpriteRenderer>().color = ColorEdit;
                 
+                Player.SetInteger("Success", 1);
                 
-                Player.SetBool("Success", false);
+                //gameObject.animation("animationName").wrapMode=WrapMode.PingPong;
+                //Player["ChopFail"].wrapMode = WrapMode.Once;
+                Player.Play("ChopFail");
                 
             }
-
+        
+            Player.Play("ChopWait");
+            //Player.SetInteger("Success", 0);
+            Ready = false;
+            
         }
 
     }
