@@ -520,7 +520,7 @@ MonoBehaviour:
   Player: {fileID: 392383054}
   ShownTime: {fileID: 1486236963}
   Temp: 5
-  Timer: 5
+  Timer: 15
   Ready: 0
   Recent: 
   PlayerSprite: {fileID: 942559689}
@@ -638,7 +638,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8681abb78868341448224e498f7420b5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a1e91c0ef45e37c4091a368da8b822d0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

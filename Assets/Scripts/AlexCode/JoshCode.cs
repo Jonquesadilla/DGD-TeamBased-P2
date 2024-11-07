@@ -26,7 +26,7 @@ public class JoshCode : MonoBehaviour
 
     public TMP_Text ShownTime;
     public float Temp = 5;
-    public float Timer = 5;
+    public float Timer = 15;
     public bool Ready = false;
 
     public string Recent;
@@ -59,7 +59,7 @@ public class JoshCode : MonoBehaviour
         Explosion.GetComponent<SpriteRenderer>().color = ColorEdit;
         PlayerSprite.sprite = Wait;
             
-        Timer = 5.0f;
+        Timer = 7.0f;
         Ready = true;
         
         for (int i = 0; i < 5; i++)
