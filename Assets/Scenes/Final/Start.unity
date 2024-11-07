@@ -321,7 +321,7 @@ MonoBehaviour:
     you clear, you gain time on the timer!
 
 
-    - Clear as many stack as you can
+    - Clear as many stacks as you can
     before time runs out!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -653,6 +653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd34daa52f3570b40a386562aee47fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FinalScore: {fileID: 0}
+  HighScore: 0
 --- !u!4 &1833737957
 Transform:
   m_ObjectHideFlags: 0
