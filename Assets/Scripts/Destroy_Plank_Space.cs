@@ -23,6 +23,7 @@ public class Destroy_Plank_Space : MonoBehaviour
         {
             spriteRenderer.sprite = brokenPlank;
             Destroy(gameObject);
+
         }
     }
 }

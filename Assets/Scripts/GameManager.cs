@@ -12,15 +12,24 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] Planks;
 
-    public float Timer = 3;
+    public float Timer = 15;
 
     public TextMeshProUGUI Timetext;
     public TextMeshProUGUI Healthtext;
 
+    public AudioSource soundtrack;
+    public AudioClip Soundtrack;
+    public AudioSource plankbreaking;
+    public AudioClip PlankBreaking;
+    public AudioSource defeat;
+    public AudioClip Defeat;
+    public AudioSource victory;
+    public AudioClip Victory;
+    public AudioSource pain;
+    public AudioClip Pain;
 
     public float Health = 3;
 
-    public 
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +60,7 @@ public class GameManager : MonoBehaviour
         Healthtext.text = "Health: " + Mathf.Round(Health);
         if (Timer < 0)
         {
-            Timer = 3;
+            Timer = 12;
             Health -= 1;
             
         }
@@ -75,7 +84,7 @@ public class GameManager : MonoBehaviour
                 }
                 if (PlanksOnScreen[i].GetComponent<Destroy_Plank_D>())
                 {
-                    PlanksOnScreen[i].GetComponent<Destroy_Plank_D>().active = true;
+                    PlanksOnScreen[i].GetComponent<Destroy_Plank_D>().active = true;;
                 }
                 if (PlanksOnScreen[i].GetComponent<Destroy_Plank_A>())
                 {
@@ -92,7 +101,7 @@ public class GameManager : MonoBehaviour
 
         if (PlanksOnScreen.Length == 0)
         {
-            Timer = 3;
+            Timer += 2;
             for (int i = 0;i < 5;i++)
             {
                 Instantiate(PlankPrefabs[Random.Range(0, PlankPrefabs.Length)], new Vector3(0, 4 - i, 0), Quaternion.identity);
