@@ -318,8 +318,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 392383052}
-  - component: {fileID: 392383051}
   - component: {fileID: 392383053}
+  - component: {fileID: 392383054}
   m_Layer: 0
   m_Name: PlayerAnimator
   m_TagString: Untagged
@@ -327,27 +327,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &392383051
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392383050}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d0f968aed89befb4b81adc407dfde6d5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &392383052
 Transform:
   m_ObjectHideFlags: 0
@@ -417,6 +396,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &392383054
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392383050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0f968aed89befb4b81adc407dfde6d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &473369939
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,11 +446,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739819f5328197449987e67001a499e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 392383051}
+  IconsRaw:
+  - Name: Wait
+    S: {fileID: 21300000, guid: 3aa164ee9761e1740aa6cac3ee08e1f8, type: 3}
+  - Name: Chop
+    S: {fileID: 21300000, guid: 47754fec146ca214f82331e1ee4a8c6d, type: 3}
+  Player: {fileID: 0}
   ShownTime: {fileID: 1486236963}
   Temp: 5
   Timer: 5
+  Ready: 0
   Recent: 
+  PlayerSprite: {fileID: 942559689}
+  Chop: {fileID: 21300000, guid: 47754fec146ca214f82331e1ee4a8c6d, type: 3}
+  Wait: {fileID: 21300000, guid: 3aa164ee9761e1740aa6cac3ee08e1f8, type: 3}
   Explosion: {fileID: 203959045}
 --- !u!4 &473369941
 Transform:
